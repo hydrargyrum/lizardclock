@@ -1,14 +1,9 @@
-#!/bin/sh
-# Dev. date : 2009/10/17
-# 2009/11/09 : added support for analog clock hour hands
-# 2009/11/10 : added support for moonphase
-# current version : 3
+#!/bin/sh -e
 # this file is under the "do What The Fuck you want Public License v2"
 
 # requires: convert [from imagemagick], unzip, POSIX grep/date/mktemp
 # free of any bashism/gnuism
 
-set -e
 [ $# -ne 1 ] && {
 	echo "usage: $0 FILE.WCZ"
 	exit 1
