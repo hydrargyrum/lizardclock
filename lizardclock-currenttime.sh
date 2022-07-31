@@ -79,7 +79,12 @@ then
 	hours=$hourshand
 fi
 
-convert bg.jpg $moonphase -composite $month -composite $weekday -composite $day -composite $hours  -composite $minutes -composite ${haspm:+$ampm} ${haspm:+-composite} $output
+set --
+if [ -f "$moonphase" ]
+then
+	set -- $moonphase -composite
+fi
+convert bg.jpg "$@" $month -composite $weekday -composite $day -composite $hours  -composite $minutes -composite ${haspm:+$ampm} ${haspm:+-composite} $output
 
 cd -
 rm -rf "$dir"
