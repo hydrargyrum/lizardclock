@@ -10,7 +10,7 @@
 
 set -e
 [ $# -ne 1 ] && {
-	print "usage: $0 FILE.WCZ"
+	echo "usage: $0 FILE.WCZ"
 	exit 1
 }
 
