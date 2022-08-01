@@ -1,5 +1,5 @@
 #!/bin/sh -e
-# this file is under the "do What The Fuck you want Public License v2"
+# SPDX-License-Identifier: WTFPL
 
 # requires: convert [from imagemagick], unzip, POSIX grep/date/mktemp
 # free of any bashism/gnuism
