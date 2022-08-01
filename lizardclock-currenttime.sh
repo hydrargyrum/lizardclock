@@ -53,6 +53,7 @@ then
 else
 	dir=$(mktemp -d "clock.XXXXXX")
 	[ -z "$dir" ] && exit 1
+	trap 'rm -rf "$dir"' EXIT
 
 	# exit 11 means some files not in the zipfile
 	unzip -qL "$zipf" -d "$dir" \
@@ -84,6 +85,3 @@ then
 	set -- "$moonphase" -composite
 fi
 convert bg.jpg "$@" "$month" -composite "$weekday" -composite "$day" -composite "$hours" -composite "$minutes" -composite ${haspm:+$ampm} ${haspm:+-composite} "$output"
-
-cd -
-rm -rf "$dir"
